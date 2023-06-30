@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { ProductPreviewCard } from "../../components/productPreviewCard";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { addToCart } from "../../stores/cart/cartslice";
+import products from "../../restaurent.products"
 const Menu = () => {
-    const [products, setProducts] = useState([]);
+    //const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
 
     const responsive = {
@@ -30,12 +31,12 @@ const Menu = () => {
 
 
 
-    useEffect(() => {
-        fetch('https://res-back.onrender.com/api/products')
-            .then(response => response.json())
-            .then(data => setProducts(data?.data))
-            .catch(e => console.log(e))
-    }, [])
+    // useEffect(() => {
+    //     fetch('https://res-back.onrender.com/api/products')
+    //         .then(response => response.json())
+    //         .then(data => setProducts(data?.data))
+    //         .catch(e => console.log(e))
+    // }, [])
 
     const onAddProduct = (product) => {
       dispatch(addToCart(product))
