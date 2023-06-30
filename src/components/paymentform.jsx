@@ -35,7 +35,7 @@ const PaymentForm = () => {
 
         setLoading(true);
         try {
-            const { error: backeEndError, clientSecret } = await fetch('http://localhost:5500/create-payment-intent', {
+            const { error: backeEndError, clientSecret } = await fetch('https://res-back.onrender.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

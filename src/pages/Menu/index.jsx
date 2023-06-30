@@ -31,7 +31,7 @@ const Menu = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5500/api/products')
+        fetch('https://res-back.onrender.com/api/products')
             .then(response => response.json())
             .then(data => setProducts(data?.data))
             .catch(e => console.log(e))
